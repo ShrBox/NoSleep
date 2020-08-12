@@ -2,7 +2,7 @@
 
 void entry()
 {
-	std::cout << "[SleepingMessage] Loaded!\n";
+	std::cout << "[NoSleep] Loaded!\n";
 }
 
 THook(void, "?setSleeping@Player@@UEAAX_N@Z", Player* pl, bool bl)
