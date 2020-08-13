@@ -5,11 +5,10 @@ void entry()
 	std::cout << "[NoSleep] Loaded!\n";
 }
 
-THook(void, "?setSleeping@Player@@UEAAX_N@Z", Player* pl, bool bl)
+THook(void, "?setSleeping@Player@@UEAAX_N@Z",void* pl, bool bl)
 {
 	if (bl) {
-		LocateS<WLevel>()->broadcastText(u8"§a[NoSleep] " + pl->getNameTag() + u8"正在尝试睡觉，但他火了");
-		pl->setOnFire(1000);
+		SymCall("?setOnFire@Actor@@UEAAXH@Z", void, void*, int)(pl, 1000);
 	}
 	return original(pl, bl);
 }
