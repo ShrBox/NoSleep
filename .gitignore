@@ -1,5 +1,5 @@
 /x64
 /NoSleep/x64
 /.vs
-/bdx_sdk
-/NoSleep_BDXC/x64
+/NoSleep_BDXCore/x64
+/NoSleep_LiteLoader/x64
