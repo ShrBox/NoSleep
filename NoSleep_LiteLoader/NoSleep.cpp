@@ -7,6 +7,8 @@ void entry()
 
 THook(void, "?setSleeping@Player@@UEAAX_N@Z",Player* pl, bool bl)
 {
-	pl->setOnFire(1000);
+	if (bl) {
+		pl->setOnFire(1000);
+	}
 	return original(pl, bl);
 }
